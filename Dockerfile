@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY ./* /app/
 
 # Exposer le port (optionnel, mais utile pour Docker)
-EXPOSE 80
+EXPOSE 8080
 
 # Commande pour démarrer l'application FastAPI avec Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
