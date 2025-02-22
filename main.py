@@ -5,7 +5,7 @@ import torch
 import scipy.io.wavfile
 from io import BytesIO
 import numpy as np
-
+import uvicorn 
 import os, mimetypes
 from fastapi.responses  import FileResponse
 
@@ -69,6 +69,10 @@ def predict(message: str):
     print("Chemin: ", audio_file_path)
     return FileResponse(audio_file_path,  media_type="audio/wav")
 
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080)  
 
 
 
